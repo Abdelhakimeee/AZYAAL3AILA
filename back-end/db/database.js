@@ -7,7 +7,7 @@ let isConnected = false;
 const URL = `${process.env.DB_URL}`;                // .env    information
 const dbName = `${process.env.DB_NAME}`;            // .env     information
 
-const connectToDatabase = async () =>{
+export const connectToDatabase = async () =>{
     mongoose.set("strictQuery",true);
     if (isConnected) {
         console.log('Mongo is already connected');
@@ -24,15 +24,11 @@ const connectToDatabase = async () =>{
     }
 }; 
 
-const disconnectFromDatabase = async () => {
+export const disconnectFromDatabase = async () => {
     if (isConnected) {
         await mongoose.connection.close();
-        isConnected = false;
+        isConnected = false;                  
     }
     console.log("connection closed... Wait until the next connection is established");
 };
 
-export default {
-    connectToDatabase,
-    disconnectFromDatabase,
-}
