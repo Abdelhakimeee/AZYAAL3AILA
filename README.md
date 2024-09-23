@@ -1,0 +1,6 @@
+You have to do : 
+backend___________
+  - user, userAdmin, products, connection to db ...
+frontend___________
+  - novBar, footer, home, login, logoute ...
+  
